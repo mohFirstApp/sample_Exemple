@@ -42,13 +42,25 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # -------------- ajout---------------
 group :development do 
    gem 'rspec-rails','~> 3.0'
-	
+   gem 'autotest'
+   gem 'autotest-notification'
 end
 group :test do
  gem 'rspec','~> 3.0'
  gem 'webrat','0.7.1'
 end
-#---------------- fin d'ajout--------
+
+# -------- pour autotest--------
+gem 'autotest-rails', :group => [:development, :test]
+group :test do
+  gem 'ZenTest'
+  gem 'autotest-rails-pure'
+  gem 'minitest'
+  gem "spork-rails"
+end
+
+gem "autotest-growl"
+#---------------- fin d'ajout pour autotest--------
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
